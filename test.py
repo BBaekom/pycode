@@ -1,4 +1,4 @@
 #test.py
 
-msg = "hello my name is leejongmin"
+msg = "hello world"
 print(msg)
