@@ -1,8 +1,15 @@
 import numpy as np
 
 
+arr = ['3.14', 2., 5, 3]
+n_arr = np.array(arr)
+print(arr)
+print(type(arr))
+print(n_arr)
+print(type(n_arr))
+
 # arr = [[1, 4, 2], [7, 5, 3]]
-nums = np.array(3)
+# nums = np.array(3)
 # n_arr = np.array(arr)
 # np.set_printoptions(formatter={'float_kind': lambda x: "{0:0.3f}".format(x)})
 
@@ -76,13 +83,13 @@ nums = np.array(3)
 # print(a + b) # [1, 3, 5, 7]
 
 
-# 1차원 배열
-a = np.array([1, 2, 3])
+# # 1차원 배열
+# a = np.array([1, 2, 3])
 
-# 2차원 배열
-b = np.array([[10, 20, 30], [40, 50, 60]])
+# # 2차원 배열
+# b = np.array([[10, 20, 30], [40, 50, 60]])
 
-# 브로드캐스팅 규칙에 의해 배열 'a'의 차원이 자동으로 확장됨
-result = a + b
+# # 브로드캐스팅 규칙에 의해 배열 'a'의 차원이 자동으로 확장됨
+# result = a + b
 
-print(result)
+# print(result)

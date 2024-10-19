@@ -15,7 +15,7 @@ def filter_median():
         src[x, y] = (i % 2) * 255
 
     dst1 = cv2.GaussianBlur(src, (0, 0), 1)
-    dst2 = cv2.medianBlur(src, 3)
+    dst2 = cv2.medianBlur(src, 9)
 
     cv2.imshow('src', src)
     cv2.imshow('dst1', dst1)
