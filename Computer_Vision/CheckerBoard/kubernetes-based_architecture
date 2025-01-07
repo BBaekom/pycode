@@ -1,0 +1,49 @@
+digraph "Kubernetes-Based Architecture" {
+	graph [fontcolor="#2D3436" fontname="Sans-Serif" fontsize=15 label="Kubernetes-Based Architecture" nodesep=0.60 pad=2.0 rankdir=LR ranksep=0.75 splines=ortho]
+	node [fixedsize=true fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 height=1.4 imagescale=true labelloc=b shape=box style=rounded width=1.4]
+	edge [color="#7B8894"]
+	"569c192d44844b3a8832ec57aea75a41" [label="User (Flutter Frontend)" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/onprem/client/user.png" shape=none]
+	"569c192d44844b3a8832ec57aea75a41" -> "2f4e9478f32f4a4d863e5c075a82204d" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"2f4e9478f32f4a4d863e5c075a82204d" -> "5a1e9d910cf44cdab9af69bdfc7782e6" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"2f4e9478f32f4a4d863e5c075a82204d" -> e97c28c2c5a647f78e082ac52cda54da [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"2f4e9478f32f4a4d863e5c075a82204d" -> dbb50fe5df424a998f9b2f2065a105a5 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"5a1e9d910cf44cdab9af69bdfc7782e6" -> a66d38f39e84486f990d965576a7037f [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"5a1e9d910cf44cdab9af69bdfc7782e6" -> a0730ef7f19943108fcee0d905c191f6 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"5a1e9d910cf44cdab9af69bdfc7782e6" -> b029e87bef42496fb586f6ce3979dab3 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	e97c28c2c5a647f78e082ac52cda54da -> a66d38f39e84486f990d965576a7037f [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	e97c28c2c5a647f78e082ac52cda54da -> a0730ef7f19943108fcee0d905c191f6 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	e97c28c2c5a647f78e082ac52cda54da -> b029e87bef42496fb586f6ce3979dab3 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	dbb50fe5df424a998f9b2f2065a105a5 -> a66d38f39e84486f990d965576a7037f [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	dbb50fe5df424a998f9b2f2065a105a5 -> a0730ef7f19943108fcee0d905c191f6 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	dbb50fe5df424a998f9b2f2065a105a5 -> b029e87bef42496fb586f6ce3979dab3 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	subgraph "cluster_Kubernetes Cluster" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Kubernetes Cluster" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"2f4e9478f32f4a4d863e5c075a82204d" [label="Kubernetes Entry (Load Balancer or Ingress)" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/k8s/network/ing.png" shape=none]
+		subgraph "cluster_Spring Boot Instances" {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label="Spring Boot Instances" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			"5a1e9d910cf44cdab9af69bdfc7782e6" [label="Spring Boot Instance" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/k8s/compute/pod.png" shape=none]
+			e97c28c2c5a647f78e082ac52cda54da [label="Spring Boot Instance" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/k8s/compute/pod.png" shape=none]
+			dbb50fe5df424a998f9b2f2065a105a5 [label="Spring Boot Instance" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/k8s/compute/pod.png" shape=none]
+		}
+		subgraph "cluster_MySQL Databases" {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label="MySQL Databases" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			a66d38f39e84486f990d965576a7037f [label="MySQL Instance" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/generic/database/sql.png" shape=none]
+			a0730ef7f19943108fcee0d905c191f6 [label="MySQL Instance" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/generic/database/sql.png" shape=none]
+			b029e87bef42496fb586f6ce3979dab3 [label="MySQL Instance" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/generic/database/sql.png" shape=none]
+		}
+		subgraph "cluster_Llama 3.1 LLM Servers" {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label="Llama 3.1 LLM Servers" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			"4104de037a0445e1b17f5ec79d2873b5" [label="Llama 3.1 Server" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/k8s/compute/pod.png" shape=none]
+			fe212aa7d69b4ba9ba48e9e8dbdbd241 [label="Llama 3.1 Server" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/k8s/compute/pod.png" shape=none]
+			"6e0f6764a1924218b02310fbc152d958" [label="Llama 3.1 Server" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/k8s/compute/pod.png" shape=none]
+		}
+		subgraph "cluster_EEVE LLM Servers" {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label="EEVE LLM Servers" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			"341aed727a5f4ff5ad870ec95c84cafc" [label="EEVE Server" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/k8s/compute/pod.png" shape=none]
+			e781172a83714f438965b57728e6ba4a [label="EEVE Server" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/k8s/compute/pod.png" shape=none]
+			c91c8596ba2d4ad8adec8f203097da64 [label="EEVE Server" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/k8s/compute/pod.png" shape=none]
+		}
+	}
+	"6a2c9fbeab3a4c709b230abf031a2d04" [label="Static File Storage" height=1.9 image="/Users/jongmin/code/pycode/myenv/lib/python3.9/site-packages/resources/generic/storage/storage.png" shape=none]
+	"569c192d44844b3a8832ec57aea75a41" -> "6a2c9fbeab3a4c709b230abf031a2d04" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+}
